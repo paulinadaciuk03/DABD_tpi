@@ -47,10 +47,8 @@ export default function Jugadores(){
         <div className="container">
          <form className="formulario" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="title">Inscribir un Jugador</h1>
-                <input {...register("name")} placeholder="Nombre" className="form-input"></input>
-                <input {...register("last_name")} placeholder="Apellido" className="form-input"></input>
-                <input type="date" {...register("age")} placeholder="Edad" className="form-input"></input>
-                <input type="file" {...register("foto")} placeholder="Foto" className="form-input"></input>
+                <input {...register("name")} placeholder="nombre" className="form-input"></input>
+                <input {...register("apellido")} placeholder="apellido" className="form-input"></input>
                 <button onClick={handleSubmit(onSubmit)} className="form-btn">Enviar</button>
             </form>
         </div>
