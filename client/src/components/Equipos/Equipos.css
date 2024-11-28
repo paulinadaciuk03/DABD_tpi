@@ -1,0 +1,29 @@
+.container {
+    background-color: rgb(255, 255, 255);
+    max-width: 500px;
+    margin: 50px auto;
+    height: auto;
+    border-radius: 20px;
+}
+
+.formulario{
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.form-input{
+    padding: 0.5em;
+    width: 50%;
+    border: none;
+    margin-bottom: 2em;
+    border-bottom: 1px solid black;
+}
+
+.title{
+    color: rgb(255, 123, 0);
+}
