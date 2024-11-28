@@ -14,11 +14,13 @@ export default function Header(){
                 <div className="navbar-left">
                     <Link to="/equipos" className="navbar-item">Equipos</Link>
                     <Link to="/jugadores" className="navbar-item">Jugadores</Link>
-                    <li className="navbar-item">Torneos</li>
+                    <Link to="/torneo" className="navbar-item">Torneos</Link>
+                    
                     <li className="navbar-item">Fixtures</li>
                     <li className="navbar-item">Encuentros</li>
                     <li className="navbar-item">Estadísticas</li>
                     <li className="navbar-item">Resultados</li>
+                    
                 </div>
                    
             </nav>

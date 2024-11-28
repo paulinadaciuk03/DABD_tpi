@@ -18,7 +18,6 @@ export default function Jugadores(){
                 <h1 className="title">Inscribir un Jugador</h1>
                 <input {...register("name")} placeholder="nombre" className="form-input"></input>
                 <input {...register("apellido")} placeholder="apellido" className="form-input"></input>
-                <input {...register("apellido")} placeholder="apellido" className="form-input"></input>
                 <button onClick={handleSubmit(onSubmit)} className="form-btn">Enviar</button>
             </form>
         </div>
