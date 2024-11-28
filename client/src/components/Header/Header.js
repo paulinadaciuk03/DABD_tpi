@@ -15,8 +15,7 @@ export default function Header(){
                     <Link to="/equipos" className="navbar-item">Equipos</Link>
                     <Link to="/jugadores" className="navbar-item">Jugadores</Link>
                     <Link to="/torneo" className="navbar-item">Torneos</Link>
-                    
-                    <li className="navbar-item">Fixtures</li>
+                    <Link to="/fixtures" className="navbar-item">Fixtures</Link>
                     <li className="navbar-item">Encuentros</li>
                     <li className="navbar-item">Estadísticas</li>
                     <li className="navbar-item">Resultados</li>

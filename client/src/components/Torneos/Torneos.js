@@ -16,7 +16,7 @@ export default function Torneos(){
         <h1 className="title">Inscribirse a un Torneo</h1>
                 <input {...register("name")} placeholder="nombre del equipo" className="form-input"></input>
                 <select {...register("categoria")} className="form-input">
-                   
+                    <option value="">Selecciona una categoría</option>
                 </select>
 
                 <select {...register("division")} className="form-input">
