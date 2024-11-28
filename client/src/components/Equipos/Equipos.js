@@ -8,11 +8,24 @@ export default function Equipos(){
     const [equipos, setEquipos] = useState([]);
 
     const onSubmit = data => {
-        setEquipos([...equipos, data]);
+
+        if(validaciones(data) > 0){
+            alert("Por favor elija un equipo que no esté registrado");
+        } else {
+            setEquipos([...equipos, data]);
+        }
         console.log(data);
     };
 
-
+    const validaciones = (data) => {
+        let cont = 0;
+        equipos.forEach(element => {
+            if(element.name === data.name){
+                cont++;
+            } 
+        });
+        return cont;
+    }
 
     return(
         <>
@@ -20,8 +33,8 @@ export default function Equipos(){
          <div className="container">
          <form className="formulario" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="title">Inscribir un Equipo</h1>
-                <input {...register("name")} placeholder="Nombre del equipo" className="form-input"></input>
-                <input {...register("director")} placeholder="Director Tecnico" className="form-input"></input>
+                <input {...register("name", {required: true})} placeholder="Nombre del equipo" className="form-input"></input>
+                <input {...register("director", {required: true})} placeholder="Director Tecnico" className="form-input"></input>
                 <button onClick={handleSubmit(onSubmit)} className="form-btn">Enviar</button>
             </form>
         </div>

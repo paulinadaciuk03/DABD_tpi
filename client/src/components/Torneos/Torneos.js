@@ -13,13 +13,13 @@ export default function Torneos(){
         <Header></Header>
         <div className="container">
         <form className="formulario" onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="title">Inscribirse a un Torneo</h1>
-                <input {...register("name")} placeholder="nombre del equipo" className="form-input"></input>
-                <select {...register("categoria")} className="form-input">
+        <h1 className="title">Crear un Torneo</h1>
+                <input {...register("name", {required: true})} placeholder="Nombre" className="form-input"></input>
+                <select {...register("categoria", {required: true})} className="form-input">
                     <option value="">Selecciona una categoría</option>
                 </select>
 
-                <select {...register("division")} className="form-input">
+                <select {...register("division", {required: true})} className="form-input">
                     <option value="">Selecciona una división</option>
                     <option value="Division1">División 1</option>
                     <option value="Division2">División 2</option>

@@ -16,16 +16,31 @@ export default function Jugadores(){
         console.log(categoria); 
         const equipo = "No inscripto";
 
-        const nuevoJugador = {
-            name: data.name,
-            lastName: data.last_name,
-            fechaNacimiento: data.fechaNacimiento,
-            edad,
-            categoria,
-            equipo
-        };
+        const validacion = validarDatos(data);
 
-        setJugadores([...jugadores, nuevoJugador]);
+        if(validacion !== 0){
+            alert("El jugador ya está inscripto");
+        } else {
+            const nuevoJugador = {
+                name: data.name,
+                lastName: data.last_name,
+                fechaNacimiento: data.fechaNacimiento,
+                edad,
+                categoria,
+                equipo
+            };
+            setJugadores([...jugadores, nuevoJugador]);
+        }
+
+
+    };
+
+    const validarDatos = (data) => {
+        return jugadores.some(jugador => 
+            jugador.name === data.name && 
+            jugador.lastName === data.last_name && 
+            jugador.fechaNacimiento === data.fechaNacimiento
+        ) ? 1 : 0;
     };
 
     const calcularCategoria = (edad) => {
@@ -60,12 +75,14 @@ export default function Jugadores(){
     return(
         <>
         <Header></Header>
+        <div className="background">    
+        </div>
         <div className="container">
          <form className="formulario" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="title">Inscribir un Jugador</h1>
-                <input {...register("name")} placeholder="Nombre" className="form-input"></input>
-                <input {...register("last_name")} placeholder="Apellido" className="form-input"></input>
-                <input type="date" {...register("fechaNacimiento")} placeholder="Fecha de Nacimiento"className="form-input"></input>
+                <input  {...register("name", {required: true})} placeholder="Nombre" className="form-input" ></input>
+                <input  {...register("last_name", {required: true})} placeholder="Apellido" className="form-input"></input>
+                <input  type="date" {...register("fechaNacimiento", {required: true})} placeholder="Fecha de Nacimiento"className="form-input"></input>
                 <button onClick={handleSubmit(onSubmit)} className="form-btn">Enviar</button>
             </form>
         </div>
