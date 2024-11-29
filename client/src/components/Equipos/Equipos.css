@@ -31,3 +31,16 @@
 .title{
     color: rgb(255, 123, 0);
 }
+
+.btn-action{
+    border: none;
+    font-size: 16px;
+    background-color: rgb(153, 153, 207);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-action:hover{
+    background-color: rgb(255, 123, 0);
+}
